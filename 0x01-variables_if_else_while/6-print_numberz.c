@@ -7,12 +7,9 @@
 int main(void)
 {
 int baseTen;
-char baseT;
-
 for (baseTen = 0; baseTen < 10; baseTen++)
 {
-baseT = '0' + baseTen;
-putchar(baseT);
+putchar('0' + baseTen);
 }
 putchar('\n');
 return (0);
