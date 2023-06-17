@@ -13,11 +13,7 @@ int lastDigit;
 
 srand(time(0));
 n = rand() - RAND_MAX / 2;
-<<<<<<< HEAD
 lastDigit = n % 10;
-=======
-int lastDigit = n % 10;
->>>>>>> parent of e0e951d... 1-last_digit.c
 if (lastDigit > 5)
 {
 printf("Last digit of %d is %d and is greater than 5\n", n, lastDigit);
