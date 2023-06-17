@@ -13,10 +13,8 @@ if (alpha == 'q' || alpha == 'e')
 {
 continue;
 }
-else
-{
 putchar(alpha);
 }
-}
+putchar('\n');
 return (0);
 }
