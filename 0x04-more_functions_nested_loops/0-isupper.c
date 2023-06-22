@@ -1,4 +1,3 @@
-#include <ctype.h>
 /**
  * _isupper - checks for uppercase character
  * @c: passed to the function as the argument to check
@@ -6,7 +5,7 @@
  */
 int _isupper(int c)
 {
-	if (isupper(c) > 0)
+	if (c >= 'A' && c <= 'Z')
 	{
 		return (1);
 	}
