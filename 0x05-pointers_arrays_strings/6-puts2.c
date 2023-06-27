@@ -11,9 +11,7 @@ int i;
 
 for (i = 0; newStr[i] != '\0'; newStr++)
 {
-if (newStr[i] % 2 != 0)
-continue;
-
+if (newStr[i] % 2 == 0)
 _putchar(newStr[i]);
 }
 _putchar('\n');
