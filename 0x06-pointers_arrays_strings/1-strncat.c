@@ -10,22 +10,20 @@ char *_strncat(char *dest, char *src, int n)
 {
 	char *des = dest;
 
-	while (*des != '\0')
+	while (*dest != '\0')
 	{
-		des++;
+		dest++;
 	}
 
-	if (n > 0)
+	while (*src != '\0' && n > 0)
 	{
-		while (n)
-		{
-			*des = *src;
-			des++;
-			src++;
-			n--;
-		}
+		*dest = *src;
+		dest++;
+		src++;
+		n--;
 	}
-	*des = '\0';
 
-	return (dest);
+	*dest = '\0';
+
+	return (des);
 }
