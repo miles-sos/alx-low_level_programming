@@ -10,7 +10,7 @@ char *s = str;
 char *x = "aAeEoOtTlL";
 char *y = "4433007711";
 
-int i; 
+int i;
 int j;
 
 for (i = 0; str[i] != '\0'; i++)
