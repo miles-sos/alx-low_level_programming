@@ -7,22 +7,22 @@
  */
 char *cap_string(char *str)
 {
-	char *s = str;
-	int capitalizeNext = 1;
+char *s = str;
+int capitalizeNext = 1;
 
-	/* Loop through the string of chars */
-	while (*str != '\0')
-	{
-		if (capitalizeNext && isalpha(*str))
-		{
-			*str = toupper(*str);
-			capitalizeNext = 0;
-		}
-		else if (!isalpha(*str))
-		{
-			capitalizeNext = 1;
-		}
-		str++;
-	}
-	return (s);
+/* Loop through the string of chars */
+while (*str != '\0')
+{
+if (capitalizeNext && isalpha(*str))
+{
+*str = toupper(*str);
+capitalizeNext = 0;
+}
+else if (!isalnum(*str) && *str != '-' && isalpha(*(str + 1)))
+{
+capitalizeNext = 1;
+}
+str++;
+}
+return (s);
 }
