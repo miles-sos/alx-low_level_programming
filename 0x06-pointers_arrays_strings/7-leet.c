@@ -7,8 +7,8 @@
 char *leet(char *str)
 {
 char *s = str;
-char *leetChars = "aAeEoOtTlL";
-char *charReplacement = "4433007711";
+char *x = "aAeEoOtTlL";
+char *y = "4433007711";
 
 int i; 
 int j;
@@ -17,9 +17,9 @@ for (i = 0; str[i] != '\0'; i++)
 {
 for (j = 0; j < 10; j++)
 {
-if (str[i] == leetChars[j])
+if (str[i] == x[j])
 {
-str[i] = charReplacement[j];
+str[i] = y[j];
 }
 }
 }
