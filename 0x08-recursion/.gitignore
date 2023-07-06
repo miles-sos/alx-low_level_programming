@@ -1,0 +1,3 @@
+#Files to be omitted
+*main.c
+_putchar.c
