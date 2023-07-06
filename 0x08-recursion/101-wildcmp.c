@@ -1,38 +1,29 @@
 #include "main.h"
-#include <stdio.h>
-
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * wildcmp - a function that compares two strings
+ * and returns 1 if the strings can be considered
+ * identical, otherwise return 0
+ * @s1: first string
+ * @s2: second string
+ * Return: 0 or 1 if identical
  */
-int main(void)
+int wildcmp(char *s1, char *s2)
 {
-int r;
-
-r = wildcmp("main.c", "*.c");
-printf("%d\n", r);
-r = wildcmp("main.c", "m*a*i*n*.*c*");
-printf("%d\n", r);
-r = wildcmp("main.c", "main.c");
-printf("%d\n", r);
-r = wildcmp("main.c", "m*c");
-printf("%d\n", r);
-r = wildcmp("main.c", "ma********************************c");
-printf("%d\n", r);
-r = wildcmp("main.c", "*");
-printf("%d\n", r);
-r = wildcmp("main.c", "***");
-printf("%d\n", r);
-r = wildcmp("main.c", "m.*c");
-printf("%d\n", r);
-r = wildcmp("main.c", "**.*c");
-printf("%d\n", r);
-r = wildcmp("main-main.c", "ma*in.c");
-printf("%d\n", r);
-r = wildcmp("main", "main*d");
-printf("%d\n", r);
-r = wildcmp("abc", "*b");
-printf("%d\n", r);
+if (*s1 == *s2)
+{
+if (*s1 == '\0')
+{
+return (1);
+}
+return (wildcmp(s1 + 1, s2 + 1));
+}
+else if (*s2 == '*')
+{
+if (*s1 == '\0' && *(s2 + 1) == '\0')
+return (1);
+if (*s1 == '\0')
+return (wildcmp(s1, s2 + 1));
+return (wildcmp(s1 + 1, s2) || wildcmp(s1, s2 + 1));
+}
 return (0);
 }
