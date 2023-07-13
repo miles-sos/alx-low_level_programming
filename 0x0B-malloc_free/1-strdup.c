@@ -16,16 +16,13 @@ char *_strdup(char *str)
 	len = strlen(str);
 
 	if (len < 1)
-	{
 		return (NULL);
-	}
 	newStr = (char *) malloc(len * sizeof(char));
 
 	if (newStr == NULL)
-	{
 		return (NULL);
-	}
-	newStr = strdup(str);
+
+	strcpy(newStr, str);
 
 	return (newStr);
 }
