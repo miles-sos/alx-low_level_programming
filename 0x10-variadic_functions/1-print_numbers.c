@@ -27,6 +27,7 @@ printf("%d", va_arg(myvalues, int));
 else
 printf("%d%s", va_arg(myvalues, int), separator);
 }
+va_end(myvalues);
 printf("\n");
 }
 }
