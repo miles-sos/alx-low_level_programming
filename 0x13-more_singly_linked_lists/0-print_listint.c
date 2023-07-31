@@ -7,24 +7,20 @@
  */
 size_t print_listint(const listint_t *h)
 {
-	int num = 0;
-	listint_t *ptr;
-	const listint_t *current;
+	int count = 0;
+	const listint_t *ptr;
 
 	if (h == NULL)
 		return (0);
 
 	/*Assign current to point to head*/
-	current = h;
-
-	/*Cast out the const*/
-	ptr = (listint_t *)current;
+	ptr = h;
 
 	while (ptr != NULL)
 	{
 		printf("%d\n", ptr->n);
 		ptr = ptr->next;
-		num += 1;
+		count += 1;
 	}
-	return (num);
+	return (count);
 }
