@@ -14,7 +14,10 @@ size_t print_listint(const listint_t *h)
 	if (h == NULL)
 		return (0);
 
+	/*Assign current to point to head*/
 	current = h;
+
+	/*Cast out the const*/
 	ptr = (listint_t *)current;
 
 	while (ptr != NULL)
