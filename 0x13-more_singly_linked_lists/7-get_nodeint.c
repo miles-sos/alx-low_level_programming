@@ -14,18 +14,15 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	if (head == NULL)
 		return (NULL);
 
-	else
+	ptr = head; /*Initialize ptr to point to head*/
+
+	while (i < index && ptr != NULL)
 	{
-		ptr = head; /*Initialize ptr to point to head*/
-
-		while (i < index)
-		{
-			ptr = ptr->next;
-			i++;
-		}
-		if (ptr == NULL)
-			return (NULL);
-
-		return (ptr);
+		ptr = ptr->next;
+		i++;
 	}
+	if (ptr == NULL) /*Check if node does not exist*/
+		return (NULL);
+
+	return (ptr);
 }
