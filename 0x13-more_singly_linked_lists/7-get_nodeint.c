@@ -13,10 +13,10 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 
 	if (head == NULL)
 		return (NULL);
+	
+	ptr = head; /*Initialize ptr to point to head*/
 
-	ptr = head;
-
-	while (i != index)
+	while (i < index && ptr != NULL)
 	{
 		ptr = ptr->next;
 		i++;
