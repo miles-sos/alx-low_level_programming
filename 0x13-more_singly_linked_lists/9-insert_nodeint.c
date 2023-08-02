@@ -12,7 +12,7 @@ listint_t *insert_nodeint_at_index(listint_t **head,
 {
 	/*get the length of list to check if possibility*/
 	listint_t *ptr, *newNode;
-	unsigned int i = 1;
+	unsigned int i = 0;
 
 	if (*head == NULL)
 		return (NULL);
@@ -24,12 +24,12 @@ listint_t *insert_nodeint_at_index(listint_t **head,
 	if (newNode == NULL)
 		return (NULL);
 
-	while (ptr != NULL && i < idx)
+	while (ptr != NULL && i < idx - 1)
 	{
 		ptr = ptr->next;
 		i++;
 	}
-	if (i < idx)
+	if (i < idx - 1)
 		return (NULL);
 
 	newNode->n = n;
