@@ -17,6 +17,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 
 	curr = *head;
 	prev = *head;
+
 	/*Deletion at beginning of list*/
 	if (index == 0)
 	{
@@ -26,14 +27,14 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		return (1);
 	}
 	/*If index != 0, Traverse list*/
-	while (i < index - 1 && curr != NULL)
+	while (i < index && curr != NULL)
 	{
 		prev = curr;
 		curr = curr->next;
 		i++;
 	}
 	/*If index is not found*/
-	if (curr == NULL)
+	if (i < index )
 		return (-1);
 
 	prev->next = curr->next;
