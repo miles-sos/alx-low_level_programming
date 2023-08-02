@@ -14,9 +14,6 @@ listint_t *insert_nodeint_at_index(listint_t **head,
 	listint_t *ptr, *newNode;
 	unsigned int i = 0;
 
-	if (*head == NULL)
-		return (NULL);
-
 	/*If idx != 0, i.e. a particular position*/
 	if (idx != 0)
 	{
