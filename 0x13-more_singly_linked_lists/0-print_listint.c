@@ -7,15 +7,13 @@
  */
 size_t print_listint(const listint_t *h)
 {
-	/*Creates a counter*/
-	size_t num = 0;
+	size_t i = 0;
 
-	/*Loops through the list*/
 	while (h != NULL)
 	{
 		printf("%d\n", h->n);
 		h = h->next;
-		num++;
+		i++;
 	}
-	return (num);
+	return (i);
 }
