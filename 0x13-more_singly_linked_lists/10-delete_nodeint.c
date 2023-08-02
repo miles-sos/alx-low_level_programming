@@ -8,37 +8,36 @@
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	listint_t *curr;
-	listint_t *prev;
+	listint_t *ptr;
+	listint_t *next;
 	unsigned int i = 0;
 
 	if (*head == NULL)
 		return (-1);
 
-	curr = *head;
-	prev = *head;
-
 	/*Deletion at beginning of list*/
 	if (index == 0)
 	{
-		*head = curr->next;
-		free(curr);
-		curr = NULL;
+		next = (*head)->next;
+		free(*head);
+		*head = next;
 		return (1);
 	}
+
+	ptr = *head;
+
 	/*If index != 0, Traverse list*/
-	while (i < index && curr != NULL)
+	while (i < index - 1)
 	{
-		prev = curr;
-		curr = curr->next;
+		if (ptr->next == NULL)
+			return (-1);
+
+		ptr = ptr->next;
 		i++;
 	}
-	/*If index is not found*/
-	if (i < index )
-		return (-1);
 
-	prev->next = curr->next;
-	free(curr);
-	curr = NULL;
+	next = ptr->next;
+	ptr->next = next->next;
+	free(next);
 	return (1);
 }
