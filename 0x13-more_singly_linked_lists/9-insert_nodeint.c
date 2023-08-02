@@ -17,10 +17,10 @@ listint_t *insert_nodeint_at_index(listint_t **head,
 	if (*head == NULL)
 		return (NULL);
 
-	ptr = *head;
 	/*If idx != 0, i.e. a particular position*/
 	if (idx != 0)
 	{
+		ptr = *head;
 		while (ptr != NULL && i < idx - 1)
 		{
 			ptr = ptr->next;
