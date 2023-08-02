@@ -18,23 +18,36 @@ listint_t *insert_nodeint_at_index(listint_t **head,
 		return (NULL);
 
 	ptr = *head;
+	/*If idx != 0, i.e. a particular position*/
+	if (idx != 0)
+	{
+		while (ptr != NULL && i < idx - 1)
+		{
+			ptr = ptr->next;
+			i++;
+		}
+		if (ptr == NULL)
+			return (NULL);
+	}
 
 	/*create new node and allocate space*/
 	newNode = malloc(sizeof(listint_t));
 	if (newNode == NULL)
 		return (NULL);
 
-	while (ptr != NULL && i < idx - 1)
-	{
-		ptr = ptr->next;
-		i++;
-	}
-	if (i < idx - 1)
-		return (NULL);
-
+	/*Assign value to newNode */
 	newNode->n = n;
+
+	/*If idx == 0, i.e. first node*/
+	if (idx == 0)
+	{
+		newNode->next = *head;
+		*head = newNode;
+		return (newNode);
+	}
+
+	/*If idx != 0, assign the newNode addr to curr *next*/
 	newNode->next = ptr->next;
 	ptr->next = newNode;
-
 	return (newNode);
 }
