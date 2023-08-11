@@ -10,13 +10,11 @@ int append_text_to_file(const char *filename, char *text_content)
 	int fd;
 	ssize_t bytes_w;
 
-	mode_t pp = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
-
 	if (filename == NULL)
 		return (-1);
 
 	/* open the file, append the content */
-	fd = open(filename, O_APPEND, pp);
+	fd = open(filename, O_WRONLY | O_APPEND);
 	if (fd == -1)
 		return (-1);
 
@@ -32,7 +30,7 @@ int append_text_to_file(const char *filename, char *text_content)
 
 	if (bytes_w == -1)
 		return (-1);
-	
+
 	close(fd);
 	return (1);
 }
