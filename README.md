@@ -1,6 +1,6 @@
 # alx-low_level_programming
 ---
-### This repo contains all the __repositories for each task__ in our journey of `C - programming`
+##### This repo contains all the *_repositories for each task_* in our journey of `C - programming`
 
 > My Journey to C Programming :)
 
